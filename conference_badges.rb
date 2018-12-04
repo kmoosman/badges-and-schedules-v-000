@@ -1,16 +1,15 @@
 def badge_maker(name)
-  puts "Hello, my name is #{name}."
+  return "Hello, my name is #{name}."
 end
 
 def batch_badge_creator(speakers)
-  speakers.each{|name| puts "Hello, my name is #{name}."}
+  speakers.collect{|name| "Hello, my name is #{name}."}
 end 
 
 def assign_rooms(speakers)
-  room = 1
-  speakers.each do |name| 
-    puts "Hello, #{name}! You'll be assigned to room #{room}!"
-    room += 1
+  speakers.each_with_index do |name, index| 
+    return "Hello, #{name}! You'll be assigned to room #{index + 1}!"
+  end
 end
 
 def printer
